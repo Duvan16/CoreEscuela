@@ -1,83 +1,66 @@
 ﻿using System;
+using System.Collections.Generic;
 using CoreEscuela.Entidades;
 using static System.Console;
 
 namespace Etapa1
 {
-    class ProgramArreglos
+    class Program
     {
         static void Main(string[] args)
         {
             var escuela = new Escuela("Platzi Academy", 2012, TiposEscuela.Primaria,
             ciudad: "Bogotá", pais: "Colombia");
 
-            // escuela.Pais = "Colombia";
-            // escuela.Ciudad = "Bogota";
-            // escuela.TipoEscuela = TiposEscuela.Primaria;
-
-            /////Forma 1 de llenar arreglo cursos//////
-            // var arreglosCursos = new Curso[3];
-
-            // arreglosCursos[0] = new Curso()
-            // {
-            //     Nombre = "101"
-            // };
-
-            // var curso2 = new Curso()
-            // {
-            //     Nombre = "201"
-            // };
-
-            // arreglosCursos[1] = curso2;
-
-            // arreglosCursos[2] = new Curso
-            // {
-            //     Nombre = "301"
-            // };
-            ////////////////////////////////////////////
-
-            ////////Forma 2 llenar arreglo cursos///////
-            // Curso[] arreglosCursos = {
-            //     new Curso() { Nombre = "101"},
-            //     new Curso() { Nombre = "201"},
-            //     new Curso() { Nombre = "301"}
-            // };
-            /////////////////////////////////////////////
-
-            ////Imprimir arreglo cursos///////////////////
-            // System.Console.WriteLine("===================");
-            // ImprimirCursosWhile(arreglosCursos);
-            // System.Console.WriteLine("===================");
-            // ImprimirCursosDoWhile(arreglosCursos);
-            // System.Console.WriteLine("===================");
-            // ImprimirCursosFor(arreglosCursos);
-            // System.Console.WriteLine("===================");
-            // ImprimirCursosForEach(arreglosCursos);
-            //////////////////////////////////////////////
-
-
-            ////////Forma 3 llenar arreglo cursos///////
-            //En esta opción se asigno al atributo cursos del Objeto escuela
-            escuela.Cursos = new Curso[]{
-                new Curso() { Nombre = "101"},
-                new Curso() { Nombre = "201"},
-                new Curso() { Nombre = "301"}
+            escuela.Cursos = new List<Curso>(){
+                new Curso() { Nombre = "101", Jornada=TiposJornada.Mañana},
+                new Curso() { Nombre = "201", Jornada=TiposJornada.Mañana},
+                new Curso() { Nombre = "301", Jornada=TiposJornada.Mañana}
             };
-            /////////////////////////////////////////////
 
+            escuela.Cursos.Add(new Curso { Nombre = "102", Jornada = TiposJornada.Tarde });
+            escuela.Cursos.Add(new Curso { Nombre = "202", Jornada = TiposJornada.Tarde });
+
+            var otraColeccion = new List<Curso>(){
+                new Curso() { Nombre = "401", Jornada=TiposJornada.Mañana},
+                new Curso() { Nombre = "501", Jornada=TiposJornada.Mañana},
+                new Curso() { Nombre = "501", Jornada=TiposJornada.Tarde}
+            };
+
+            //otraColeccion.Clear();
+            // Curso tmp = new Curso() { Nombre = "101 Vacacional", Jornada = TiposJornada.Noche };
+
+            escuela.Cursos.AddRange(otraColeccion);
+            // escuela.Cursos.Add(tmp);
             ImprimirCursosEscuela(escuela);
+            // WriteLine("Curso.Hash" + tmp.GetHashCode());
 
-            bool rta = 10 == 10;
-            if (rta)
+
+            //A partir de c# ya no es necesario hacer esta inferencia de tipos
+            //Predicate<Curso> miAlgoritmo = Predicado;
+
+            ///Delegados
+            //Forma 1 : hay que construir la funciòn aparte
+            // escuela.Cursos.RemoveAll(Predicado);
+
+            //Forma 2: se especifica el delegate
+            escuela.Cursos.RemoveAll(delegate (Curso cur)
             {
-                WriteLine("Se cumplio la condición");
-            }else if (true)
-            {
-                //hago otra cosa
-            }else
-            {
-                //hacer otra cosa sino cumple
-            }
+                return cur.Nombre == "301";
+            });
+
+            //Forma 3: con expresiones lambda
+            escuela.Cursos.RemoveAll((cur) => cur.Nombre == "501" && cur.Jornada == TiposJornada.Mañana);
+            //////////////////////////////////////////////////////////
+
+
+            // escuela.Cursos.Remove(tmp);
+            WriteLine("=====================");
+            ImprimirCursosEscuela(escuela);
+        }
+        private static bool Predicado(Curso curobj)
+        {
+            return curobj.Nombre == "301";
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
