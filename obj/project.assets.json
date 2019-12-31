@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NetCore\\Etapa1\\Etapa1.csproj",
+      "projectUniqueName": "D:\\NetCore\\CoreEscuela\\Etapa1.csproj",
       "projectName": "Etapa1",
-      "projectPath": "D:\\NetCore\\Etapa1\\Etapa1.csproj",
+      "projectPath": "D:\\NetCore\\CoreEscuela\\Etapa1.csproj",
       "packagesPath": "C:\\Users\\DUVAN\\.nuget\\packages\\",
-      "outputPath": "D:\\NetCore\\Etapa1\\obj\\",
+      "outputPath": "D:\\NetCore\\CoreEscuela\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

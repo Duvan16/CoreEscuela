@@ -20,3 +20,14 @@ D:\NetCore\Etapa1\obj\Debug\netcoreapp3.1\Etapa1.AssemblyInfoInputs.cache
 D:\NetCore\Etapa1\obj\Debug\netcoreapp3.1\Etapa1.AssemblyInfo.cs
 D:\NetCore\Etapa1\obj\Debug\netcoreapp3.1\Etapa1.dll
 D:\NetCore\Etapa1\obj\Debug\netcoreapp3.1\Etapa1.pdb
+D:\NetCore\CoreEscuela\bin\Debug\netcoreapp3.1\Etapa1.exe
+D:\NetCore\CoreEscuela\bin\Debug\netcoreapp3.1\Etapa1.deps.json
+D:\NetCore\CoreEscuela\bin\Debug\netcoreapp3.1\Etapa1.runtimeconfig.json
+D:\NetCore\CoreEscuela\bin\Debug\netcoreapp3.1\Etapa1.runtimeconfig.dev.json
+D:\NetCore\CoreEscuela\bin\Debug\netcoreapp3.1\Etapa1.dll
+D:\NetCore\CoreEscuela\bin\Debug\netcoreapp3.1\Etapa1.pdb
+D:\NetCore\CoreEscuela\obj\Debug\netcoreapp3.1\Etapa1.csprojAssemblyReference.cache
+D:\NetCore\CoreEscuela\obj\Debug\netcoreapp3.1\Etapa1.AssemblyInfoInputs.cache
+D:\NetCore\CoreEscuela\obj\Debug\netcoreapp3.1\Etapa1.AssemblyInfo.cs
+D:\NetCore\CoreEscuela\obj\Debug\netcoreapp3.1\Etapa1.dll
+D:\NetCore\CoreEscuela\obj\Debug\netcoreapp3.1\Etapa1.pdb
